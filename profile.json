@@ -1,0 +1,370 @@
+{
+  "identity": {
+    "fullName": "Abhinav Verma",
+    "firstName": "Abhinav",
+    "lastName": "Verma",
+    "location": {
+      "city": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "country": "India"
+    },
+    "contact": {
+      "email": "vabhinav029@gmail.com",
+      "phone": "+91-836-847-7793"
+    }
+  },
+
+  "education": [
+    {
+      "institution": "ABES Engineering College",
+      "location": "Ghaziabad, India",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science Engineering",
+      "startYear": 2022,
+      "endYear": 2026
+    }
+  ],
+
+  "experience": [
+    {
+      "company": "Josh Technology Group",
+      "location": "Gurugram, India",
+      "role": "Software Engineer",
+      "startDate": "2025-09",
+      "endDate": "2026-02",
+      "employmentType": "Full-time",
+      "bullets": [
+        {
+          "text": "Built and optimized backend services in Python/Django within a production architecture.",
+          "skills": ["Python", "Django", "Backend", "SQL"]
+        },
+        {
+          "text": "Reduced API latency by 30% through query tuning and execution plan analysis.",
+          "metrics": {
+            "latencyReductionPercent": 30
+          },
+          "skills": ["SQL", "Performance Optimization", "APIs"]
+        },
+        {
+          "text": "Worked on deployments, backend integrations, and debugging service dependencies.",
+          "skills": ["Deployments", "Debugging", "Integration"]
+        }
+      ]
+    },
+    {
+      "company": "Programming Pathshala",
+      "location": "Noida, India",
+      "role": "Full-Stack Developer",
+      "startDate": "2025-06",
+      "endDate": "2025-07",
+      "employmentType": "Internship",
+      "bullets": [
+        {
+          "text": "Developed backend APIs in Node.js.",
+          "skills": ["Node.js", "JavaScript", "APIs"]
+        },
+        {
+          "text": "Reduced time-to-first-byte from 3s to 200ms by optimizing streaming architecture.",
+          "metrics": {
+            "ttfbBeforeMs": 3000,
+            "ttfbAfterMs": 200
+          },
+          "skills": ["Performance Optimization", "Streaming"]
+        }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Telescope",
+      "type": "Distributed Log Ingestion System",
+      "techStack": ["Golang", "Kafka", "PostgreSQL"],
+      "githubLink":"https://github.com/Abhinnavverma/Telescope-Distributed-Log-Search-Engine",
+      "metrics": {
+        "throughputEventsPerSec": 500000,
+        "searchLatencySec": 2
+      },
+      "bullets": [
+        "Built distributed ingestion pipeline processing 500k+ events/sec.",
+        "Designed consumer groups and partitioning for horizontal scaling.",
+        "Implemented LSM-inspired storage layer improving throughput and query latency.",
+        "Enabled near real-time search visibility."
+      ]
+    },
+    {
+      "name": "High-Frequency Ticketing System",
+      "type": "Concurrent Booking Platform",
+      "techStack": ["Golang", "Redis", "PostgreSQL"],
+      "githubLink":"https://github.com/Abhinnavverma/High-Frequency-Distributed-Ticketing-Engine",
+      "metrics": {
+        "requestsPerSec": 10000,
+        "p95LatencyMs": 5
+      },
+      "bullets": [
+        "Designed concurrency-safe booking system handling traffic spikes.",
+        "Implemented distributed locking and consistency controls.",
+        "Prevented overselling under concurrent demand.",
+        "Validated with k6 load testing."
+      ]
+    },
+    {
+      "name": "Distributed Chat System",
+      "type": "Realtime Messaging Backend",
+      "techStack": ["Golang", "WebSockets", "Redis"],
+      "githubLink":"https://github.com/Abhinnavverma/Go-Distributed-ChatApp",
+      "metrics": {
+          "concurrentUsers": 1000
+        },
+        "bullets": [
+            "Built horizontally scalable real-time chat backend.",
+            "Implemented Redis Pub/Sub for cross-instance synchronization.",
+            "Load tested with 1000 concurrent users."
+        ]
+    },
+    
+    {
+        "name": "StackShifter",
+        "type": "Framework Migration CLI",
+        "category": "Developer Tools",
+        "status": "Existing Resume Project",
+        "githubLink":"https://github.com/Aditya0o7/stackshifter",
+      "techStack": [
+        "JavaScript",
+        "Node.js",
+        "Babel AST",
+        "Codemods",
+        "Next.js"
+      ],
+      "tags": [
+        "CLI Tooling",
+        "Code Transformation",
+        "AST",
+        "Automation",
+        "Migration"
+      ],
+      "bullets": [
+        "Built CLI tool to migrate React applications to Next.js automatically.",
+        "Implemented AST-driven JSX to TSX conversion and routing transformations.",
+        "Automated CSS Modules migration, file restructuring, and import path correction."
+      ]
+    },
+
+    {
+      "name": "rustVecSearch",
+      "type": "Vector Search Engine",
+      "category": "Systems / Search Infrastructure",
+      "status": "Additional Project",
+      "githubLink":"https://github.com/Abhinnavverma/rustVecSearch",
+      "techStack": ["Rust", "K-Means", "Multithreading"],
+      "tags": [
+        "Search Engine",
+        "ANN",
+        "Concurrency",
+        "Rust",
+        "Vector Database"
+      ],
+      "bullets": [
+        "Built multi-threaded vector search engine in Rust using Hot/Cold index architecture.",
+        "Enabled concurrent insertions with lock-free hot buffer and background cold-index flushing.",
+        "Implemented K-Means clustering for approximate nearest neighbor search.",
+        "Used Arc, RwLock, and channels for concurrent ingestion and search workloads."
+      ]
+    },
+
+    {
+      "name": "Content Broadcasting System",
+      "type": "Stateless Media Scheduling Backend",
+      "category": "Backend Systems",
+      "status": "Additional Project",
+      "githubLink":"https://github.com/Abhinnavverma/content-broadcasting-system",
+      "techStack": [
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "tags": [
+        "Backend",
+        "RBAC",
+        "JWT",
+        "Scheduling",
+        "Concurrency"
+      ],
+      "bullets": [
+        "Built stateless backend API for scheduling and broadcasting educational media content.",
+        "Designed modulo-based rotation engine eliminating cron jobs and background workers.",
+        "Implemented role-based access control for teacher and principal workflows using JWT.",
+        "Used database locking to prevent race conditions during approval and scheduling."
+      ]
+    },
+
+    {
+      "name": "Go Rate Limiter",
+      "type": "Distributed Rate Limiting Library",
+      "category": "Infrastructure",
+      "status": "Additional Project",
+      "githubLink":"https://github.com/Abhinnavverma/go-RateLimiter",
+      "techStack": ["Golang", "Redis Cluster", "Lua"],
+      "tags": [
+        "Rate Limiting",
+        "Infrastructure",
+        "Redis",
+        "Distributed Systems"
+      ],
+      "bullets": [
+        "Built token-bucket rate limiter backed by Redis Cluster.",
+        "Implemented Lua scripts for atomic token consumption and refill logic.",
+        "Supported millisecond precision, auto-expiry, and per-user isolation.",
+        "Designed for distributed deployment across multiple nodes."
+      ]
+    },
+
+    {
+      "name": "TraceRat",
+      "type": "Pull Request Blast Radius Analyzer",
+      "category": "Developer Infrastructure / AI",
+      "status": "Additional Project",
+      "githubLink":"https://github.com/Abhinnavverma/TraceRat",
+      "techStack": [
+        "Kafka",
+        "Microservices",
+        "LLM",
+        "Vector Search",
+        "Graph Analysis"
+      ],
+      "tags": [
+        "AI",
+        "Code Review",
+        "Risk Analysis",
+        "Microservices",
+        "DevTools"
+      ],
+      "bullets": [
+        "Built system to predict production blast radius of GitHub pull requests before merge.",
+        "Combined dependency graph analysis, traffic telemetry, historical PR outcomes, and LLM reasoning.",
+        "Designed event-driven microservices architecture communicating over Kafka.",
+        "Generated automated PR comments with risk scores and actionable recommendations."
+      ]
+    },
+
+    {
+      "name": "Asteroid Dodger AI",
+      "type": "Neural Network Simulation",
+      "category": "Machine Learning / Simulation",
+      "status": "Additional Project",
+      "githubLink":"https://github.com/Abhinnavverma/asteroid-dodger",
+      "techStack": ["JavaScript", "HTML5 Canvas"],
+      "tags": [
+        "Neural Networks",
+        "Simulation",
+        "Visualization",
+        "Game AI"
+      ],
+      "bullets": [
+        "Built simulation where neural network learns to control spaceship and dodge asteroids.",
+        "Visualized training progress, network structure, and real-time decision making.",
+        "Implemented save/load controls for best-performing model using browser storage."
+      ]
+    }
+  ],
+
+  "skills": {
+    "languages": [
+      "Golang",
+      "C++",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "C"
+    ],
+    "frameworks": [
+      "Django",
+      "Node.js",
+      "Nest.js",
+      "Next.js"
+    ],
+    "backend": [
+      "REST APIs",
+      "gRPC",
+      "WebSockets",
+      "Microservices"
+    ],
+    "frontend": [
+      "Atomic Design",
+      "React Js",
+      "TypeScript",
+      "Redux",
+      "Playwright"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Redis"
+    ],
+    "messaging": [
+      "Kafka",
+      "Redis Pub/Sub"
+    ],
+    "infra": [
+      "Docker",
+      "Kubernetes",
+      "AWS EC2",
+      "AWS S3"
+    ],
+    "coreCS": [
+      "Data Structures",
+      "Algorithms",
+      "Operating Systems",
+      "DBMS",
+      "OOP",
+      "Concurrency",
+      "Distributed Systems"
+    ],
+    "testing": [
+      "k6 Load Testing",
+      "Unit Testing",
+      "Integration Testing",
+      "E2E Testing"
+    ]
+  },
+
+  "achievements": [
+    {
+      "platform": "LeetCode",
+      "title": "Guardian",
+      "rating": 2200,
+      "percentile": "Top 0.5%"
+    },
+    {
+      "platform": "LeetCode",
+      "title": "Global Rank 27",
+      "contest": "Contest 429",
+      "participants": 25000
+    },
+    {
+      "platform": "Codeforces",
+      "title": "Expert",
+      "rating": 1670
+    },
+    {
+      "platform": "LeetCode",
+      "title": "Peak Rating",
+      "rating": 2300
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Machine Learning",
+      "provider": "Stanford / Coursera",
+      "instructor": "Andrew Ng"
+    }
+  ],
+
+  "links": {
+    "github": "https://www.github.com/Abhinnavverma",
+    "linkedin": "https://www.linkedin.com/in/abhinav--verma"
+  }
+}

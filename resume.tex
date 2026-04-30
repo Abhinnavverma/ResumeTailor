@@ -1,0 +1,176 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins (Maximized for 1 page)
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\topmargin}{-0.85in}
+\addtolength{\textheight}{1.75in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting (Tightened vertical space)
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+% Tightened space after lists
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Abhinav Verma} \\ \vspace{2pt}
+    \small \faPhone* \hspace{1pt} +91-836-847-7793 $|$ \faEnvelope \hspace{1pt} \href{mailto:vabhinav029@gmail.com}{\underline{vabhinav029@gmail.com}} $|$ \faGithub \hspace{1pt} \href{https://github.com/Abhinnavverma}{\underline{GitHub}} $|$ \faLinkedin \hspace{1pt} \href{https://linkedin.com/in/abhinav--verma}{\underline{LinkedIn}} \\ \vspace{2pt}
+    \textbf{Backend Engineer --- Distributed Systems \& Golang}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer}{September 2025 -- February 2026}
+      {Josh Technology Group}{Gurugram, India}
+      \resumeItemListStart
+        \resumeItem{Built and optimized backend services in Python/Django within a multi-tier production architecture.}
+        \resumeItem{Improved database-heavy API workflows, reduced response latency by 30\% through query tuning and execution plan analysis.}
+        \resumeItem{Profiled performance bottlenecks across service, database layers to support faster and more stable production releases.}
+        \resumeItem{Collaborated with frontend and backend engineers on API integration, deployment workflows, and system debugging.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Full-Stack Developer}{June 2025 -- July 2025}
+      {Programming Pathshala}{Noida, India}
+      \resumeItemListStart
+        \resumeItem{Developed backend APIs in Node.js for high-performance application workflows.}
+        \resumeItem{Improved system responsiveness by optimizing streaming architecture, reducing time-to-first-byte from 3s to 200ms.}
+        \resumeItem{Worked across backend and client-side integration points to improve reliability and release readiness.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------HONORS & ACHIEVEMENTS-----------
+\section{Honors \& Achievements}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{LeetCode Guardian (Top 0.5\% Globally):} Peak rating 2200+, reflecting strong problem-solving under pressure. \\
+     \textbf{Global Rank 27 -- LeetCode Contest 429:} Ranked among 25,000+ participants by solving all problems under strict time constraints. \\
+     \textbf{Codeforces Expert (Max Rating 1670):} Reached Expert tier through consistent performance in rated contests. \\
+     \textbf{Machine Learning -- Stanford (Andrew Ng, Coursera):} Completed foundational coursework covering supervised learning, optimization, and model evaluation.
+    }}
+  \end{itemize}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{Telescope -- Distributed Log Ingestion System} $|$ \faGithub \hspace{2pt}\href{https://github.com/Abhinnavverma/Telescope-Distributed-Log-Search-Engine}{\underline{GitHub}}}{}
+        \vspace{2pt}\\ \textit{\small{Golang, Kafka, PostgreSQL}}
+        \resumeItemListStart
+          \resumeItem{Built a distributed ingestion pipeline processing 500k+ events/sec using Kafka and PostgreSQL.}
+          \resumeItem{Designed Kafka consumer groups and partitioning strategy to support horizontal scaling and balanced ingestion.}
+          \resumeItem{Implemented a write-optimized storage layer inspired by LSM architecture to improve throughput and reduce query latency.}
+          \resumeItem{Enabled near real-time search visibility with 2s latency through background compaction and indexing mechanisms.}
+        \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\textbf{High-Frequency Ticketing System} $|$ \faGithub \hspace{2pt}\href{https://github.com/Abhinnavverma/High-Frequency-Distributed-Ticketing-Engine}{\underline{GitHub}}}{}
+        \vspace{2pt}\\ \textit{\small{Golang, Redis, PostgreSQL}}
+        \resumeItemListStart
+          \resumeItem{Designed a concurrency-safe booking system handling 10k+ req/s spikes without overselling inventory.}
+          \resumeItem{Modeled transactional workflows to preserve correctness under concurrent booking scenarios.}
+          \resumeItem{Implemented distributed locking and database-level consistency controls to maintain transactional integrity.}
+          \resumeItem{Validated performance using k6 load testing, achieving 5ms P95 latency under sustained traffic.}
+        \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\textbf{Distributed Chat System} $|$ \faGithub \hspace{2pt}\href{https://github.com/Abhinnavverma/Go-Distributed-ChatApp}{\underline{GitHub}}}{}
+        \vspace{2pt}\\ \textit{\small{Golang, WebSockets, Redis}}
+        \resumeItemListStart
+          \resumeItem{Built a horizontally scalable real-time chat backend supporting concurrent users across multiple service instances.}
+          \resumeItem{Implemented Redis Pub/Sub for cross-instance message synchronization.}
+          \resumeItem{Load-tested with 1,000 concurrent users while maintaining stable message delivery.}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Golang (Primary), C++, Python, JavaScript/TypeScript, SQL} \\
+     \textbf{Computer Science Fundamentals}{: Data Structures \& Algorithms, Object-Oriented Design, Operating Systems, DBMS, Concurrency, Distributed Systems} \\
+     \textbf{Backend Systems}{: REST APIs, gRPC, WebSockets, Kafka, Redis, Microservices, Caching, Load Testing} \\
+     \textbf{Databases}{: PostgreSQL (Indexing, Transactions, Query Tuning), Redis} \\
+     \textbf{Infrastructure}{: Docker, Kubernetes, AWS (EC2, S3)}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {ABES Engineering College}{Ghaziabad, India}
+      {Bachelor of Technology in Computer Science Engineering}{2022 -- 2026}
+  \resumeSubHeadingListEnd
+
+\end{document}
