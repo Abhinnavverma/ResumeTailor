@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, Form, BackgroundTasks
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import shutil
@@ -12,6 +12,10 @@ app = FastAPI(title="AI-Powered Resume Tuner")
 
 # Mount the static directory to serve the frontend
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/static/index.html")
 
 def cleanup_files(filename_base: str):
     """Deletes temporary artifacts like the PDF and TeX files generated per request."""
