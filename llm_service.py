@@ -22,7 +22,7 @@ def generate_tailored_resume(job_description: str, company_name: str, base_tex: 
 
 STRICT RULES & CONSTRAINTS:
 1. STRUCTURAL INTEGRITY: The underlying LaTeX structure, formatting, macros, and section orders MUST remain 100% untouched. DO NOT modify geometry, margins, or documentclass. Only alter the text content within the structural commands.
-2. ROLE RETENTION: Do NOT delete entire job roles or positions. DO NOT touch anything in job descriptions. no content rewrites or anything.
+2. ROLE RETENTION: Do NOT delete entire job roles or positions. DO NOT touch anything in experience or its description, EXPERIENCE UNTOUCHED I REPEAT. no content rewrites or anything.
 3. KEYWORD INJECTION: Naturally seamlessly integrate keywords extracted from the target JD to maximize ATS compatibility. If a skill isn't in the provided profile JSON, weave it naturally into existing experiences anyway.
 4. TRUTHFUL EXPERIENCE: Do not fabricate entirely new jobs or degrees. Tweak, reframe, and highlight parts of the existing profile JSON responsibilities to align with the JD priorities. 
 5. TONE & PHRASING: Use strong action verbs and maintain a highly impactful, professional tone. Focus on metrics and achievements.
