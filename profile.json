@@ -27,12 +27,34 @@
 
   "experience": [
     {
+      "company": "KoinX",
+      "location": "Remote",
+      "role": "Backend Engineer Intern",
+      "startDate": "2026-05",
+      "endDate": "Present",
+      "employmentType": "Internship",
+      "bullets": [
+        {
+          "text": "Contributing to a Node.js backend codebase for the tax-generation service, building and maintaining APIs for core workflow execution.",
+          "skills": ["Node.js", "Backend", "APIs"]
+        },
+        {
+          "text": "Implementing backend logic and service integrations with a focus on correctness, maintainability, and production readiness.",
+          "skills": ["Backend", "Integration", "Debugging"]
+        },
+        {
+          "text": "Working with the engineering team to debug issues, support feature delivery, and improve service reliability in a remote environment.",
+          "skills": ["Collaboration", "Debugging", "Reliability"]
+        }
+      ]
+    },
+    {
       "company": "Josh Technology Group",
       "location": "Gurugram, India",
-      "role": "Software Engineer",
+      "role": "Software Engineer Intern",
       "startDate": "2025-09",
       "endDate": "2026-02",
-      "employmentType": "Full-time",
+      "employmentType": "Internship",
       "bullets": [
         {
           "text": "Built and optimized backend services in Python/Django within a production architecture.",
@@ -54,7 +76,7 @@
     {
       "company": "Programming Pathshala",
       "location": "Noida, India",
-      "role": "Full-Stack Developer",
+      "role": "Full-Stack Developer Intern",
       "startDate": "2025-06",
       "endDate": "2025-07",
       "employmentType": "Internship",
@@ -80,7 +102,7 @@
       "name": "Telescope",
       "type": "Distributed Log Ingestion System",
       "techStack": ["Golang", "Kafka", "PostgreSQL"],
-      "githubLink":"https://github.com/Abhinnavverma/Telescope-Distributed-Log-Search-Engine",
+      "githubLink": "https://github.com/Abhinnavverma/Telescope-Distributed-Log-Search-Engine",
       "metrics": {
         "throughputEventsPerSec": 500000,
         "searchLatencySec": 2
@@ -96,7 +118,7 @@
       "name": "High-Frequency Ticketing System",
       "type": "Concurrent Booking Platform",
       "techStack": ["Golang", "Redis", "PostgreSQL"],
-      "githubLink":"https://github.com/Abhinnavverma/High-Frequency-Distributed-Ticketing-Engine",
+      "githubLink": "https://github.com/Abhinnavverma/High-Frequency-Distributed-Ticketing-Engine",
       "metrics": {
         "requestsPerSec": 10000,
         "p95LatencyMs": 5
@@ -112,23 +134,23 @@
       "name": "Distributed Chat System",
       "type": "Realtime Messaging Backend",
       "techStack": ["Golang", "WebSockets", "Redis"],
-      "githubLink":"https://github.com/Abhinnavverma/Go-Distributed-ChatApp",
+      "githubLink": "https://github.com/Abhinnavverma/Go-Distributed-ChatApp",
       "metrics": {
-          "concurrentUsers": 1000
-        },
-        "bullets": [
-            "Built horizontally scalable real-time chat backend.",
-            "Implemented Redis Pub/Sub for cross-instance synchronization.",
-            "Load tested with 1000 concurrent users."
-        ]
+        "concurrentUsers": 1000
+      },
+      "bullets": [
+        "Built horizontally scalable real-time chat backend.",
+        "Implemented Redis Pub/Sub for cross-instance synchronization.",
+        "Load tested with 1000 concurrent users."
+      ]
     },
-    
+
     {
-        "name": "StackShifter",
-        "type": "Framework Migration CLI",
-        "category": "Developer Tools",
-        "status": "Existing Resume Project",
-        "githubLink":"https://github.com/Aditya0o7/stackshifter",
+      "name": "StackShifter",
+      "type": "Framework Migration CLI",
+      "category": "Developer Tools",
+      "status": "Existing Resume Project",
+      "githubLink": "https://github.com/Aditya0o7/stackshifter",
       "techStack": [
         "JavaScript",
         "Node.js",
@@ -155,7 +177,7 @@
       "type": "Vector Search Engine",
       "category": "Systems / Search Infrastructure",
       "status": "Additional Project",
-      "githubLink":"https://github.com/Abhinnavverma/rustVecSearch",
+      "githubLink": "https://github.com/Abhinnavverma/rustVecSearch",
       "techStack": ["Rust", "K-Means", "Multithreading"],
       "tags": [
         "Search Engine",
@@ -177,21 +199,9 @@
       "type": "Stateless Media Scheduling Backend",
       "category": "Backend Systems",
       "status": "Additional Project",
-      "githubLink":"https://github.com/Abhinnavverma/content-broadcasting-system",
-      "techStack": [
-        "TypeScript",
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "Docker"
-      ],
-      "tags": [
-        "Backend",
-        "RBAC",
-        "JWT",
-        "Scheduling",
-        "Concurrency"
-      ],
+      "githubLink": "https://github.com/Abhinnavverma/content-broadcasting-system",
+      "techStack": ["TypeScript", "Node.js", "Express", "PostgreSQL", "Docker"],
+      "tags": ["Backend", "RBAC", "JWT", "Scheduling", "Concurrency"],
       "bullets": [
         "Built stateless backend API for scheduling and broadcasting educational media content.",
         "Designed modulo-based rotation engine eliminating cron jobs and background workers.",
@@ -205,7 +215,7 @@
       "type": "Distributed Rate Limiting Library",
       "category": "Infrastructure",
       "status": "Additional Project",
-      "githubLink":"https://github.com/Abhinnavverma/go-RateLimiter",
+      "githubLink": "https://github.com/Abhinnavverma/go-RateLimiter",
       "techStack": ["Golang", "Redis Cluster", "Lua"],
       "tags": [
         "Rate Limiting",
@@ -226,7 +236,7 @@
       "type": "Pull Request Blast Radius Analyzer",
       "category": "Developer Infrastructure / AI",
       "status": "Additional Project",
-      "githubLink":"https://github.com/Abhinnavverma/TraceRat",
+      "githubLink": "https://github.com/Abhinnavverma/TraceRat",
       "techStack": [
         "Kafka",
         "Microservices",
@@ -254,14 +264,9 @@
       "type": "Neural Network Simulation",
       "category": "Machine Learning / Simulation",
       "status": "Additional Project",
-      "githubLink":"https://github.com/Abhinnavverma/asteroid-dodger",
+      "githubLink": "https://github.com/Abhinnavverma/asteroid-dodger",
       "techStack": ["JavaScript", "HTML5 Canvas"],
-      "tags": [
-        "Neural Networks",
-        "Simulation",
-        "Visualization",
-        "Game AI"
-      ],
+      "tags": ["Neural Networks", "Simulation", "Visualization", "Game AI"],
       "bullets": [
         "Built simulation where neural network learns to control spaceship and dodge asteroids.",
         "Visualized training progress, network structure, and real-time decision making.",
@@ -280,18 +285,8 @@
       "SQL",
       "C"
     ],
-    "frameworks": [
-      "Django",
-      "Node.js",
-      "Nest.js",
-      "Next.js"
-    ],
-    "backend": [
-      "REST APIs",
-      "gRPC",
-      "WebSockets",
-      "Microservices"
-    ],
+    "frameworks": ["Django", "Node.js", "Nest.js", "Next.js"],
+    "backend": ["REST APIs", "gRPC", "WebSockets", "Microservices"],
     "frontend": [
       "Atomic Design",
       "React Js",
@@ -299,20 +294,9 @@
       "Redux",
       "Playwright"
     ],
-    "databases": [
-      "PostgreSQL",
-      "Redis"
-    ],
-    "messaging": [
-      "Kafka",
-      "Redis Pub/Sub"
-    ],
-    "infra": [
-      "Docker",
-      "Kubernetes",
-      "AWS EC2",
-      "AWS S3"
-    ],
+    "databases": ["PostgreSQL", "Redis"],
+    "messaging": ["Kafka", "Redis Pub/Sub"],
+    "infra": ["Docker", "Kubernetes", "AWS EC2", "AWS S3"],
     "coreCS": [
       "Data Structures",
       "Algorithms",
