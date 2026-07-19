@@ -30,7 +30,8 @@ STRICT RULES & CONSTRAINTS:
 7. LENGTH CONSTRAINT: Keep the overall word count closely aligned with the original base resume's length so it fits the physical page layout perfectly (Text Content <= 400 words).
 8. OUTPUT FORMAT: YOU MUST OUTPUT ONLY THE RAW, COMPILABLE LATEX CODE. DO NOT wrap the output in markdown code blocks (like ```latex). DO NOT add conversational text before or after. Start immediately with the first line of the LaTeX document and end with \\end{{document}}.
 9. SWAP PROJECTS: Swap the current projects with other projects listed under profile.json, which align the closes to the current JD, all the info and the links for the new swapped projects shall work correctly
-10. ESCAPE SPECIAL CHARACTERS: Remember to properly escape LaTeX characters like &, %, $ with a backslash (e.g. \\&, \\%, \\$)!"""
+10.ESCAPE SPECIAL CHARACTERS: Remember to properly escape LaTeX characters like &, %, $ with a backslash (e.g. \\&, \\%, \\$)!
+11.DO NOT MODIFY ANYTHING RELATED TO EXPERIENCE IN THE LATEX CODE IMPORTANT***"""
 
     user_prompt = f"""--- DATA INPUTS ---
 

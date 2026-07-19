@@ -27,7 +27,7 @@
 
   "experience": [
     {
-      "company": "KoinX",
+      "company": "KoinX Crypto Software",
       "location": "Remote",
       "role": "Backend Engineer Intern",
       "startDate": "2026-05",
@@ -35,16 +35,28 @@
       "employmentType": "Internship",
       "bullets": [
         {
-          "text": "Contributing to a Node.js backend codebase for the tax-generation service, building and maintaining APIs for core workflow execution.",
-          "skills": ["Node.js", "Backend", "APIs"]
+          "text": "Architected the core Tax Report Generation Service, building chunked and non-chunked data pipelines to process high-volume crypto transactions with minimal memory overhead.",
+          "skills": [
+            "Data Pipelines",
+            "Architecture",
+            "Memory Optimization"
+          ]
         },
         {
-          "text": "Implementing backend logic and service integrations with a focus on correctness, maintainability, and production readiness.",
-          "skills": ["Backend", "Integration", "Debugging"]
+          "text": "Engineered an automated reporting microservice that aggregates cross-exchange data to dynamically generate pre-filled IRS Form 1099-DA tax documents.",
+          "skills": [
+            "Microservices",
+            "Data Aggregation",
+            "Automation"
+          ]
         },
         {
-          "text": "Working with the engineering team to debug issues, support feature delivery, and improve service reliability in a remote environment.",
-          "skills": ["Collaboration", "Debugging", "Reliability"]
+          "text": "Developed an rules engine for the UK SA108 capital gains module to map complex crypto trades to regional tax schemas.",
+          "skills": [
+            "Rules Engine",
+            "FinTech",
+            "Backend Engineering"
+          ]
         }
       ]
     },
