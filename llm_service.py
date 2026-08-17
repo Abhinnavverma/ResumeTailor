@@ -1,3 +1,4 @@
+import json
 import os
 import re
 from groq import Groq
@@ -11,6 +12,18 @@ client = Groq(
 )
 
 MODEL = 'qwen/qwen3.6-27b'
+
+# The free tier caps tokens-per-minute at 8000, and Groq counts prompt +
+# max_completion_tokens against it. A full resume needs ~2500 output tokens.
+MAX_COMPLETION_TOKENS = 3000
+
+
+def _compact_json(raw: str) -> str:
+    """Minify the profile so the prompt leaves room for the full LaTeX response."""
+    try:
+        return json.dumps(json.loads(raw), separators=(",", ":"))
+    except (json.JSONDecodeError, TypeError):
+        return raw
 
 
 def _extract_compilable_latex(text: str) -> str:
@@ -65,7 +78,7 @@ JOB DESCRIPTION FOR {company_name}:
 {job_description}
 
 JSON PROFILE DATA (Source of Truth for achievements and metrics):
-{profile_json}
+{_compact_json(profile_json)}
 
 BASE LATEX RESUME TEMPLATE:
 {base_tex}"""
@@ -84,7 +97,15 @@ BASE LATEX RESUME TEMPLATE:
         model=MODEL,
         temperature=0.3,  # Low temperature for more deterministic, factual output
         reasoning_effort="none",  # Qwen 3.6 thinks by default; thinking tokens break pdflatex
+        max_completion_tokens=MAX_COMPLETION_TOKENS,  # The 2048-token default cuts the document mid-page
     )
 
-    text_content = chat_completion.choices[0].message.content
+    choice = chat_completion.choices[0]
+    if choice.finish_reason == "length":
+        raise ValueError(
+            "Model output was truncated before the document ended. "
+            "Shorten the job description or raise max_completion_tokens."
+        )
+
+    text_content = choice.message.content
     return _extract_compilable_latex(text_content)
