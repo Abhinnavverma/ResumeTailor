@@ -10,8 +10,34 @@ client = Groq(
     api_key=os.environ.get("GROQ_API_KEY"),
 )
 
-# We'll use Llama-3.3-70b-versatile, which is extremely fast and very capable
 MODEL = 'qwen/qwen3.6-27b'
+
+
+def _extract_compilable_latex(text: str) -> str:
+    """Strip reasoning/markdown wrappers and keep only a complete LaTeX document."""
+    if not text or not text.strip():
+        raise ValueError("Model returned empty content")
+
+    text = text.strip()
+
+    # Qwen thinking blocks that can leak into message.content
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r"<thinking>.*?</thinking>", "", text, flags=re.DOTALL | re.IGNORECASE)
+
+    # Markdown fences (anywhere, not only at the very start/end)
+    text = re.sub(r"^```(?:latex|tex)?\s*", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s*```$", "", text)
+
+    start = text.find(r"\documentclass")
+    end = text.rfind(r"\end{document}")
+    if start == -1 or end == -1 or end < start:
+        raise ValueError(
+            "Model output did not contain a complete LaTeX document "
+            r"(missing \documentclass or \end{document})."
+        )
+
+    return text[start:end + len(r"\end{document}")].strip()
+
 
 def generate_tailored_resume(job_description: str, company_name: str, base_tex: str, profile_json: str) -> str:
     """
@@ -56,18 +82,9 @@ BASE LATEX RESUME TEMPLATE:
             }
         ],
         model=MODEL,
-        temperature=0.3, # Low temperature for more deterministic, factual output
+        temperature=0.3,  # Low temperature for more deterministic, factual output
+        reasoning_effort="none",  # Qwen 3.6 thinks by default; thinking tokens break pdflatex
     )
-    
+
     text_content = chat_completion.choices[0].message.content
-    
-    # Strip markdown formatting just in case the model ignores the instruction
-    if text_content.startswith("```latex"):
-        text_content = text_content[8:]
-    elif text_content.startswith("```"):
-        text_content = text_content[3:]
-        
-    if text_content.endswith("```"):
-        text_content = text_content[:-3]
-        
-    return text_content.strip()
+    return _extract_compilable_latex(text_content)

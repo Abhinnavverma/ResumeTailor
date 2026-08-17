@@ -62,7 +62,7 @@ async def generate_resume(
         with open(temp_tex_file, "w", encoding="utf-8") as f:
             f.write(new_latex_str)
             
-        # 3. Compile the PDF locally
+        # 3. Compile the PDF locally (raises RuntimeError with LaTeX log on failure)
         convert_tex_to_pdf(temp_tex_file)
         
         # 4. Rename the output
@@ -70,10 +70,9 @@ async def generate_resume(
         final_pdf_name = f"Abhinav_verma_{clean_company_name}.pdf"
         
         # convert_tex_to_pdf outputs to the same name as the tex file: "new_resume.pdf"
-        if os.path.exists("new_resume.pdf"):
-            shutil.copy("new_resume.pdf", final_pdf_name)
-        else:
-            return {"error": "PDF Compilation failed. Missing new_resume.pdf"}
+        if not os.path.exists("new_resume.pdf"):
+            return {"error": "PDF compilation finished without producing new_resume.pdf. Check the server log for pdflatex output."}
+        shutil.copy("new_resume.pdf", final_pdf_name)
             
         # 5. Return the file to user and schedule cleanup afterward
         background_tasks.add_task(cleanup_files, f"Abhinav_verma_{clean_company_name}")

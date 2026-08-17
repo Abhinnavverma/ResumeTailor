@@ -1,26 +1,43 @@
 import subprocess
 import os
-import sys
+
+MAX_ERROR_CHARS = 1500
+
+
+def _latex_error_snippet(stdout: bytes | str) -> str:
+    if isinstance(stdout, bytes):
+        log = stdout.decode("utf-8", errors="ignore")
+    else:
+        log = stdout or ""
+
+    lines = log.splitlines()
+    error_lines = [line for line in lines if line.startswith("!") or line.startswith("l.")]
+    snippet = "\n".join(error_lines) if error_lines else log
+    snippet = snippet.strip()
+    if len(snippet) > MAX_ERROR_CHARS:
+        snippet = snippet[-MAX_ERROR_CHARS:]
+    return snippet or "No LaTeX log captured."
+
 
 def convert_tex_to_pdf(tex_filepath):
-    # Check if the .tex file actually exists where you say it does
     if not os.path.exists(tex_filepath):
-        print(f"Error: Could not find '{tex_filepath}'. Make sure the file is in the same folder as this script.")
-        return
+        raise FileNotFoundError(
+            f"Could not find '{tex_filepath}'. Make sure the file is in the same folder as this script."
+        )
 
     print(f"Firing up local LaTeX engine to compile '{tex_filepath}'...")
-    
+
     try:
         # Run pdflatex on the file.
         # '-interaction=nonstopmode' tells the compiler not to freeze and ask for user input if it hits a minor formatting warning.
-        result = subprocess.run(
+        subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", tex_filepath],
             check=True,
             stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
+            stderr=subprocess.PIPE,
         )
         print("SUCCESS: PDF generated!")
-        
+
         # Cleanup: pdflatex leaves behind messy auxiliary files (.aux, .log, .out). This deletes them.
         base_name = os.path.splitext(tex_filepath)[0]
         for ext in ['.aux', '.log', '.out']:
@@ -30,19 +47,18 @@ def convert_tex_to_pdf(tex_filepath):
         print("Cleaned up temporary LaTeX build files.")
 
     except FileNotFoundError:
-        print("\nCRITICAL ERROR: The 'pdflatex' command is not installed or not in your system's PATH.")
-        print("Since you are running this locally, you MUST have LaTeX software installed on your machine for Python to use it.")
-        print("- Windows: Install MiKTeX (miktex.org)")
-        print("- Mac: Install MacTeX (tug.org/mactex)")
-        print("- Linux: Run 'sudo apt install texlive-base'")
-        sys.exit(1)
-        
+        raise RuntimeError(
+            "pdflatex is not installed or not in PATH. "
+            "Install MiKTeX (Windows), MacTeX (Mac), or texlive-base (Linux)."
+        ) from None
+
     except subprocess.CalledProcessError as e:
+        snippet = _latex_error_snippet(e.stdout)
         print("\nCOMPILATION FAILED: The .tex file has syntax errors.")
-        # Prints the exact error from the LaTeX engine so you know what broke
-        print(e.stdout.decode('utf-8', errors='ignore'))
+        print(e.stdout.decode("utf-8", errors="ignore") if e.stdout else "")
+        raise RuntimeError(f"PDF compilation failed:\n{snippet}") from e
+
 
 if __name__ == "__main__":
-    # Change "resume.tex" to whatever your file is actually named
     target_file = "resume.tex"
     convert_tex_to_pdf(target_file)
