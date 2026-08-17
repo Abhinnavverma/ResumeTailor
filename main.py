@@ -84,4 +84,14 @@ async def generate_resume(
         )
         
     except Exception as e:
-        return {"error": str(e)}
+        message = str(e)
+        if "rate_limit_exceeded" in message or "Request too large" in message:
+            return {
+                "error": (
+                    "The job description is still too large for Groq's free-tier "
+                    "8K tokens-per-minute limit after sending only the sections that change. "
+                    "Shorten the JD and try again. "
+                    f"Original error: {message}"
+                )
+            }
+        return {"error": message}
