@@ -11,7 +11,7 @@ client = Groq(
 )
 
 # We'll use Llama-3.3-70b-versatile, which is extremely fast and very capable
-MODEL = 'llama-3.3-70b-versatile'
+MODEL = 'qwen/qwen3.6-27b'
 
 def generate_tailored_resume(job_description: str, company_name: str, base_tex: str, profile_json: str) -> str:
     """
